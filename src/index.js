@@ -2,5 +2,14 @@
 // You should implement your task here.
 
 module.exports = function towelSort (matrix) {
-  return [];
+	if (matrix === undefined) { return [] }
+	if (matrix.length === 0) { return [] }
+	for (let i = 1; i < matrix.length; i++){
+		if (i % 2 != 0){
+			matrix[i].sort(function (a, b) {
+				return b - a;
+			});
+		}
+	}
+	return matrix.flat();
 }
